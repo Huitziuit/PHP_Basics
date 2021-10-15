@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+        
+        <title>Radiohead Items</title>
+
+        <script>
+
+
+
+            var result=0
+            var message="";
+            var product=[0,0,0,0,0];
+            function store(p){
+                
+                //show total and button to buy 
+                document.getElementById('shopping').style.display = "";
+
+                p-=1;
+                product[p]++;
+
+                message='<p class="text-white text-center  lead">';
+                if(product[0]>0){
+                    message+="t-shirt x "+product[0]+" = "+product[0]*45;}
+                if(product[1]>0){    
+                    message+="</br>Vinyl OK x "+product[1]+" = "+product[1]*1499.98;}
+                if(product[2]>0){
+                    message+="</br>Guitar x "+product[2]+" = "+product[2]*5817.99;}
+                if(product[3]>0){
+                    message+="</br>Vinyl Rainbows x "+product[3]+" = "+product[3]*2908.99;}
+                if(product[4]>0){
+                    message+="</br>book x "+product[4]+" = "+product[4]*1999999;}
+
+                var t= (product[0]*45+product[1]*1499.98+product[2]*5817.99+product[3]*2908.99+product[4]*1999999);
+
+                message+="</br></br>Total = $"+t+"</p>"
+                
+                
+               
+                var total = document.getElementById('total');
+                total.innerHTML = message;
+                document.getElementById("buy").value = t;
+
+            }
+        </script>
+
+        <style>
+            .card{margin-top: 10px;margin-bottom: 10px; margin-left: 10px;margin-right: 10px;}
+
+            .icard{position:relative; top:11px}
+        </style>
+
+    </head>
+    <body class="bg-dark">
+        
+        <div class="container-flex">
+            <img class="img-fluid rounded" src="img/r1.png">
+            <div class="row justify-content-center">
+                <h1 class="text-white text-center">Items</h1>
+                
+                <!--Cards-->
+                <!--Product 1-->
+                <div class="card bg-secondary text-white" style="width: 18rem;">
+                    <img src="img/p6.jpg" class="card-img-top rounded icard"/> 
+                    <div class="card-body">
+                        <h5 class="card-title display-6">T-shit</h5>
+                        <p class="card-text fs-5 fw-light text-justify">This shirt is very cute, the bluish and green colors look great on the cover design of the simple burn the witch, which despite having gray colors this adaptation to the design is nice and the price is very accessible</p>
+                        <button type="button"  onclick="store(1)" class="btn btn-danger">Buy $ 45.00 US</button>
+                    </div>
+                </div>
+
+                <!--Product 2-->
+                <div class="card bg-secondary text-white" style="width: 18rem;">
+                    <img src="img/p1.png" class="card-img-top rounded icard">
+                    <div class="card-body">
+                        <h5 class="card-title display-6">Autograph OK Computer Vinyl</h5>
+                        <p class="card-text fs-5 fw-light text-justify">The second product is the disc of the mythical album OK COMPUTER, autographed by the whole band.<br>Many critics the best album of the band.</p>
+                        <button type="button"  onclick="store(2)" class="btn btn-danger">Buy $ 1,499.98 US</button>
+                    </div>
+                </div>
+
+                <!--Product 3-->
+                <div class="card bg-secondary text-white" style="width: 18rem;">
+                    <img src="img/p2.jpg" class="card-img-top rounded icard">
+                    <div class="card-body">
+                        <h5 class="card-title display-6">Autograph Fender Electric Guitar</h5>
+                        <p class="card-text fs-5 fw-light text-justify">A guitar autographed by Radiohead is a unique piece for a collector, however the price is much higher, if you are willing to pay more than 5 thousand dollars for it, then this is a really good option.</p>
+                        <button type="button"  onclick="store(3)" class="btn btn-danger">$ 5,817.99 US</button>
+                    </div>
+                </div>
+
+                <!--Product 4-->
+                <div class="card bg-secondary text-white" style="width: 18rem;">
+                    <img src="img/p4.jpg" class="card-img-top rounded icard">
+                    <div class="card-body">
+                        <h5 class="card-title display-6">Autograph In Rainbows Vinyl</h5>
+                        <p class="card-text fs-5 fw-light text-justify">In Rainbows is my favorite album of the band, this product is somewhat expensive, as it only has 3 autographs, but at least it has the signature of the composer and vocalist Thom</p>
+                        <button type="button"  onclick="store(4)" class="btn btn-danger">$ 2,908.99 US</button>
+                        
+                    </div>
+                </div>
+
+                <!--Product 5-->
+                <div class="card bg-secondary text-white" style="width: 18rem;">
+                    <img src="img/p5.jpg" class="card-img-top rounded icard">
+                    <div class="card-body">
+                        <h5 class="card-title display-6">Draft OK COMPUTER</h5>
+                        <p class="card-text fs-5 fw-light text-justify">The first draft of the song Airbag, the first song from the band's most successful album OK COMPUTER, this draft was found in a bookstore and sold for just 50p. Now it will be auctioned</p> 
+                        <button type="button"  onclick="store(5)" class="btn btn-danger">$ 1,999,999</button>
+                    </div>
+                </div>
+                
+                <div id="shopping" style="display: none;">
+                    <p class="text-white text-center  lead">Shopping</br></p>        
+                    <div id="total" ></div>
+
+                    <div class="text-center">
+                        <form action="shop.php" id="shop" method="POST">
+                            <input type="text" style="display: none;" name="buy" id="buy" value="">
+                            <input type="submit" class="btn btn-danger" value="Buy">
+                        </form>
+                    </div>
+                </div>
+            </div> <!--/Row justify center-->
+        </div><!--/container-->
+    </body>
+</html>
