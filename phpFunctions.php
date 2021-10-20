@@ -22,7 +22,6 @@
         if(!$result){
             echo('error mySQL'.mysqli_errno($conection));
         }
-
         mysqli_close($conection);
 
     } 
